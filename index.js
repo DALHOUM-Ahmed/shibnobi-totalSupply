@@ -20,13 +20,11 @@ async function main() {
     bscProvider
   );
 
-  const totalSupplyInEthereumNetwork = ethers.utils.formatUnits(
-    await ethereumShibnobi.totalSupply(),
-    "gwei"
+  const totalSupplyInEthereumNetwork = parseInt(
+    ethers.utils.formatUnits(await ethereumShibnobi.totalSupply(), "gwei")
   );
-  const totalSupplyInBSCNetwork = ethers.utils.formatUnits(
-    await bscShibnobi.totalSupply(),
-    "gwei"
+  const totalSupplyInBSCNetwork = parseInt(
+    ethers.utils.formatUnits(await bscShibnobi.totalSupply(), "gwei")
   );
 
   const log1 =
